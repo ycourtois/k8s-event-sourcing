@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: edge-service
+  labels:
+    app: edge-service
+spec:
+  containers:
+    - name: edge-service
+      image: ycourtois/edge-service:latest
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value : docker
+      ports:
+        - name: http
+          containerPort: 9999

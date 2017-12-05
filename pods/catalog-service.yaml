@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: catalogue-service
+  labels:
+    app: catalogue-service
+spec:
+  containers:
+    - name: catalogue-service
+      image: ycourtois/catalogue-service:latest
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value : docker

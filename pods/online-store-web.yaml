@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: online-store-web
+  labels:
+    app: online-store-web
+spec:
+  containers:
+    - name: online-store-web
+      image: ycourtois/online-store-web:latest
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value : docker
+      ports:
+        - name: http
+          containerPort: 8787

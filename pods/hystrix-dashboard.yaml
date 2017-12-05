@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hystrix-dashboard
+  labels:
+    app: hystrix-dashboard
+spec:
+  containers:
+    - name: hystrix-dashboard
+      image: ycourtois/hystrix-dashboard
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: docker
+      ports:
+        - name: http
+          containerPort: 6161

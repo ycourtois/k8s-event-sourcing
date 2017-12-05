@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: inventory-service
+  labels:
+    app: inventory-service
+spec:
+  containers:
+    - name: inventory-service
+      image: ycourtois/inventory-service:latest
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value : docker
+#      ports:
+#        - name: http
+#          containerPort: 8080
