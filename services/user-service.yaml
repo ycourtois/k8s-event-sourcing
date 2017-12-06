@@ -7,6 +7,7 @@ spec:
     app: user-service
   ports:
     - protocol: TCP
-      port: 8761
-      targetPort: 8761
-	  nodePort: 31001
+      port: 8181
+      targetPort: 8181
+      nodePort: 31181
+  type: NodePort
