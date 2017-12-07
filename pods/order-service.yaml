@@ -11,3 +11,5 @@ spec:
       env:
         - name: SPRING_PROFILES_ACTIVE
           value : docker
+        - name: DOCKER_IP
+          value: 35.189.212.195
