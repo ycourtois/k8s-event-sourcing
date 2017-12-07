@@ -9,5 +9,5 @@ spec:
     - protocol: TCP
       port: 27017
       targetPort: 27017
-      nodePort: 31017
-  type: NodePort
+  type: LoadBalancer
+  loadBalancerIP: 35.189.212.195
