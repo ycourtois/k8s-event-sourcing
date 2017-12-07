@@ -9,5 +9,5 @@ spec:
     - protocol: TCP
       port: 8761
       targetPort: 8761
-      nodePort: 31761
-  type: NodePort
+  type: LoadBalancer
+  loadBalancerIP: 35.189.212.195
