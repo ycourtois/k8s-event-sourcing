@@ -7,7 +7,6 @@ spec:
     app: online-store-web
   ports:
     - protocol: TCP
-      port: 8787
+      port: 80
       targetPort: 8787
-      nodePort: 31787
-  type: NodePort
+  type: LoadBalancer
