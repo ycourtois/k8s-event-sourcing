@@ -9,5 +9,5 @@ spec:
     - protocol: TCP
       port: 8181
       targetPort: 8181
-    type: LoadBalancer
-    loadBalancerIP: 35.189.212.195
+  type: LoadBalancer
+  loadBalancerIP: 35.189.212.195
