@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: neo4j
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: neo4j
+        environment: dev
+        context: event-sourcing
+    spec:
+      containers:
+      - name: neo4j
+        image: neo4j:2.3
+        env:
+          - name: NEO4J_AUTH
+            value : none
+        ports:
+          - name: http
+            containerPort: 7474

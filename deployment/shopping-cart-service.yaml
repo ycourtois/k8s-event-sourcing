@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shopping-cart-service
+  labels:
+    app: shopping-cart-service
+spec:
+  containers:
+    - name: shopping-cart-service
+      image: ycourtois/shopping-cart-service:latest
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value : docker
+        - name: DOCKER_IP
+          value: 35.189.212.195
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: shopping-cart-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: shopping-cart-service
+        environment: dev
+        context: event-sourcing
+    spec:
+      containers:
+      - name: shopping-cart-service
+        image: ycourtois/shopping-cart-service:latest
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: docker
+          - name: DOCKER_IP
+            value: 35.189.212.195

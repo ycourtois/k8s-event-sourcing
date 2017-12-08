@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: discovery-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: discovery-service
+        environment: dev
+        context: event-sourcing
+    spec:
+      containers:
+      - name: discovery-service
+        image: ycourtois/discovery-service:latest
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value : docker
+        ports:
+          - name: http
+            containerPort: 8761

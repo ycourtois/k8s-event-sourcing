@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: inventory-service
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: inventory-service
+        environment: dev
+        context: event-sourcing
+    spec:
+      containers:
+      - name: account-service
+        image: ycourtois/inventory-service:latest
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value : docker
